@@ -13,8 +13,8 @@ import os
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-cred = credentials.Certificate("static/serviceAccountKey.json")
-firebase_admin.initialize_app(cred)
+#cred = credentials.Certificate("static/serviceAccountKey.json")
+#firebase_admin.initialize_app(cred)
 
 # decorator for routes that should be accessible only by logged in users
 from auth_decorator import login_required
