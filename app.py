@@ -35,8 +35,6 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
-    client_id="847062077112-f8klo0pip3r6l1scr4n2uq5i8t2qsfrp.apps.googleusercontent.com",
-    client_secret="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",
     access_token_url='https://accounts.google.com/o/oauth2/token',
     access_token_params=None,
     authorize_url='https://accounts.google.com/o/oauth2/auth',
