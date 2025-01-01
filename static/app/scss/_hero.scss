@@ -1,0 +1,56 @@
+
+/* Hero Section */
+.hero {
+    &__content{
+        position: relative;
+        top: 20rem;
+        .hero-text{
+            color: $primary;
+            font-size: 8.5rem;
+            font-family: "NohemiExtraBold";
+            text-align: center;
+        }
+
+        .hero-tagline{
+            font-size: 2rem;
+            font-family: "NohemiLight";
+            text-align: center;
+        }
+    }
+
+}
+
+
+.continue-button {
+	position: relative;
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+	text-decoration: none;
+	color: $primary;
+	cursor: pointer;
+	border: 3px solid;
+	padding: 0.25em 0.5em;
+	box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+	position: relative;
+	-webkit-user-select: none;
+	user-select: none;
+	touch-action: manipulation;
+	margin-bottom: 1.5rem;
+    top: 3rem;
+	left: 43rem;
+    font-weight: bolder;
+    max-width: 30rem;
+
+    .google-icon{
+        position: relative;
+        width: 3rem;
+        left: 1.5%;
+    }
+}
+
+.continue-button:active{
+	box-shadow: 0px 0px 0px 0px;
+	top: 3.1rem;
+	left: 43.5rem
+  }
+

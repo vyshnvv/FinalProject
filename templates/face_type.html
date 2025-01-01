@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Stylist Assistant</title>
+    <link rel="stylesheet" href="/static/app/scss/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="overlay has-fade"></div>
+
+        <nav class="flex flex-jc-sb flex-ai-c">
+            <a href="index.html">
+                <h1 class="brand-text">Allure</h1>
+            </a>
+
+            <a id="btn_ham" class="header__ham-toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <div class="header__links hide-for-mobile">
+                <a href="/">Home</a>
+                <a href="http://">How It Works</a>
+                <a href="http://">Features</a>
+                <a href="http://">About Us</a>
+
+                </a>
+            </div>
+            <div class="header__spans hide-for-mobile"></div>
+
+        </nav>
+
+        <div class="header__menu has-fade hide-for-desktop flex flex-ai-c flex-jc-c flex-dir-c">
+            <a href="/">Home</a>
+                <a href="">How It Works</a>
+                <a href="http://">Features</a>
+                <a href="http://">About Us</a>
+        </div>
+
+    </header>
+
+    <div id="formOverlay" class="form-overlay">
+        <div class="overlay-content">
+            <h2 class="form-greeting">Welcome to Allure <img src="/static/images/hand.png" alt=""></h2>
+            <p class="form-sec-text">We need a few details before getting started,</p>
+            <form id="userInfoForm" class="user-form" action="/submit_user_info" method="POST">
+                <div class="name-gp">
+                    <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="age-gp gp">
+                    <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                </div>
+                
+                <div class="height-gp gp">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" name="height" required>
+                </div>
+                
+                <div class="weight-gp gp">
+                    <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+                </div>
+                
+                <div class="haircolor-gp gp">
+                    <label for="hair_color">Hair Color:</label>
+                <input type="text" id="hair_color" name="hair_color" required>
+                </div>
+
+                <input type="submit" class="user-info-form-button" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="sidebar flex flex-dir-c flex-jc-c">
+        <a href=""><img class="sb" src="/static/images/face.png" alt=""></a>
+        <a href=""><img class="sb" src="/static/images/skin.png" alt=""></a>
+        <a href=""><img class="sb" src="/static/images/body.png" alt=""></a>
+        <!--<a href=""><img class="sb" src="/static/images/palette.png" alt=""></a> -->
+    </div>
+
+    <div class="pagetop-section">
+        <p>Discover Your Face Shape Instantly.</p>
+    </div>
+
+    <hr class="greeting-hr">
+
+    <p class="common-faceshape-heading">The five most common face shapes</p>
+    <section class="face-shapes">
+        <div class="face-shape-card">
+            <img src="/static/images/oval-face.png" alt="Oval Face Shape" class="face-shape-image">
+            <div class="face-shape-content">
+                <h3>Oval Face</h3>
+                <p>Considered the ideal face shape. Length is about 1.5 times the width, with a softly rounded jawline and fairly equal forehead and jaw widths. Cheekbones are slightly wider than both.</p>
+            </div>
+        </div>
+    
+        <div class="face-shape-card">
+            <img src="/static/images/round-face.png" alt="Round Face Shape" class="face-shape-image">
+            <div class="face-shape-content">
+                <h3>Round Face</h3>
+                <p>Length and width are similar, with soft curves and no sharp angles. Cheekbones are the widest part, with equally rounded forehead and jaw. Features tend to be soft and balanced.</p>
+            </div>
+        </div>
+    
+        <div class="face-shape-card">
+            <img src="/static/images/square-face.png" alt="Square Face Shape" class="face-shape-image">
+            <div class="face-shape-content">
+                <h3>Square Face</h3>
+                <p>Characterized by strong angular features and nearly equal width at forehead, cheekbones, and jaw. The jawline is sharp and well-defined, creating a bold, geometric appearance.</p>
+            </div>
+        </div>
+    
+        <div class="face-shape-card">
+            <img src="/static/images/heart-face.png" alt="Heart Face Shape" class="face-shape-image">
+            <div class="face-shape-content">
+                <h3>Heart Face</h3>
+                <p>Wider at the forehead and gradually narrowing to a pointed chin. Often features a widow's peak hairline. Cheekbones are high and well-defined, with a narrow jaw area.</p>
+            </div>
+        </div>
+    
+        <div class="face-shape-card">
+            <img src="/static/images/diamond-face.png" alt="Diamond Face Shape" class="face-shape-image">
+            <div class="face-shape-content">
+                <h3>Diamond Face</h3>
+                <p>Distinguished by dramatic cheekbones that form the widest part of the face. Features a narrow forehead and jawline of similar widths. Often creates striking facial angles.</p>
+            </div>
+        </div>
+    </section>
+
+    <p class="user-direction-text1">Upload a photo of your face,</p>
+    
+    <div class="instructions">
+        <p>Instructions</p>
+        <li>Use a clear, well-lit image of your face.</li>
+        <li>Ensure the photo is taken straight-on, with your head facing the camera directly.</li>
+        <li>Avoid angles, shadows, or accessories (e.g., hats, sunglasses) that obscure your face.</li>
+    </div>
+    
+
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" action="/dash.html">
+            <input type="file" name="image" id="file" accept="image/*" hidden>
+            <input type="submit" value="Upload" class="upload-button">
+        </form>
+        <div class="img-area" data-img="">
+            <h3>Upload Image</h3>
+            <p>Image size must be less than <span>2MB</span></p>
+        </div>
+        <button class="select-image">Select Image</button>
+    </div>
+    <p class="prediction-result-text">Your Face Type is {{ prediction }}.</p>
+
+
+    <section class="suggestions-section">
+        <p class="user-direction-text2">Suggested Eyeglasses</p>
+        <hr class="sugg-hr">
+
+        <p class="loading-textt">Fetching eyewear for {{ prediction }} face shape.....</p>
+    
+        <div class="items flex flex-dir-r flex-jc-se">
+            <div class="item-card c1">
+            
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+            <div class="item-card c2">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+            <div class="item-card c3">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+
+
+            <div class="item-card c4">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+            <div class="item-card c5">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+            <div class="item-card c6">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+
+
+            <div class="item-card c7">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+            <div class="item-card c8">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+            <div class="item-card c9">
+                <div class="item-image flex flex-ai-c flex-jc-c">
+                    <a href=""><img id="product-image" src="" alt="Suggested eyewear"></a>
+                </div>
+                <p id="product-title" class="item-name"></p>
+                <p id="product-price" class="item-price"></p>
+            </div>
+            
+        </div>
+        <a href="/submit_user_info" class="discover-button flex flex-dir-r flex-jc-c flex-ai-c">Discover More</a>
+    </section>
+    
+    <script>
+
+        // Show the form overlay only if form_completed is False
+        let formCompleted = "{{ form_completed }}";
+        window.onload = function() {
+            if (formCompleted == "False") {
+                document.getElementById("formOverlay").style.display = "flex";
+            }
+        };
+
+        const headers = {
+            'x-rapidapi-key': '2ca5f35baemsh00c4e0f411f95b5p19fe71jsndba9a2c9e9dd',
+            'x-rapidapi-host': 'ebay38.p.rapidapi.com'
+        };
+    
+        const eyewearRecommendations = {
+            "Round": ["square eyewear", "rectangular eyewear", "cat-eye eyewear"],
+            "Square": ["round eyewear", "oval eyewear", "rimless eyewear"],
+            "Oval": ["aviator eyewear", "square eyewear", "cat-eye eyewear"],
+            "Heart": ["cat-eye eyewear", "browline eyewear", "round eyewear"],
+            "Diamond": ["oval eyewear", "cat-eye eyewear", "rimless eyewear"],
+            "Oblong": ["oversized eyewear", "square eyewear", "wayfarer eyewear"]
+        };
+    
+        const prediction = "{{ prediction }}";  // Prediction from backend
+
+        
+
+        if (prediction) {
+            fetchEyewearForFaceType(prediction);
+            
+        }
+        let currentIndex = 0; // Track the current index to place the next product
+        async function fetchEyewearForFaceType(faceType) {
+            const recommendedStyles = eyewearRecommendations[faceType];
+    
+            for (let style of recommendedStyles) {
+                const ebayUrl = `https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=${encodeURIComponent(style)}&_sacat=0`;
+                const url = `https://ebay38.p.rapidapi.com/searchByURL?url=${encodeURIComponent(ebayUrl)}`;
+    
+                try {
+                    const response = await fetch(url, { method: 'GET', headers });
+                    const result = await response.json();
+                    console.log(result);
+    
+                    if (result.length > 0) {
+                        for(let i=0 ; i<3; i++){
+                            const item = result[i];
+                            displayProduct(item);
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Error fetching "${style}":`, error);
+                }
+            }
+        }
+    
+        
+        function displayProduct(item) {
+            const itemCards = document.querySelectorAll('.item-card');
+
+            if (currentIndex < itemCards.length) {
+                const card = itemCards[currentIndex];
+                console.log("Card index -> " + currentIndex);
+                const productLink = card.querySelector('.item-image a');
+                const productImage = card.querySelector('img'); // Select the img directly
+                const productTitle = card.querySelector('.item-name'); // This matches your HTML
+                const productPrice = card.querySelector('.item-price'); 
+                
+                // Update with the actual image and title
+                productImage.src = item.image; 
+                productTitle.textContent = item.title;
+                productPrice.textContent = "$" + item.buyItNowPrice;
+                productLink.href = item.url; // Link to the product page
+                productLink.target = "_blank";
+                currentIndex++;
+            }
+        }
+
+
+    </script>
+    <div class="footer"><p>.</p></div>
+
+    <script src="/static/app/js/head_menu_func.js"></script>
+    <script src="/static/app/js/script.js"></script>
+</body>
+</html>

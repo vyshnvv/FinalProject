@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Stylist Assistant</title>
+    <link rel="stylesheet" href="/static/app/scss/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="overlay has-fade"></div>
+
+        <nav class="flex flex-jc-sb flex-ai-c">
+            <a href="index.html" class="header__logo">
+                <h1 class="brand-text">Allure</h1>
+            </a>
+
+            <a id="btn_ham" class="header__ham-toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <div class="header__links hide-for-mobile">
+                <a href="index.html">Home</a>
+                <a href="http://">How It Works</a>
+                <a href="http://">Features</a>
+                <a href="http://">About Us</a>
+
+                </a>
+            </div>
+            <div class="header__spans hide-for-mobile"></div>
+
+        </nav>
+
+        <div class="header__menu has-fade hide-for-desktop flex flex-ai-c flex-jc-c flex-dir-c">
+            <a href="index.html">Home</a>
+                <a href="">How It Works</a>
+                <a href="http://">Features</a>
+                <a href="http://">About Us</a>
+        </div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <h2 class="hero-text">Discover Your Perfect Style</h2>
+                <p class="hero-tagline">Allure is your style partner, shaping looks that bring out the real you.</p>
+                <a href="/login" class="continue-button flex flex-dir-r flex-jc-c flex-ai-c">Continue With Google <img class="google-icon" src="/static//images/google.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="/static/app/js/head_menu_func.js"></script>
+</body>
+</html>
